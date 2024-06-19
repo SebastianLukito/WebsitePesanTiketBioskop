@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Cinema Booking System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 neon-text">Admin Dashboard</h1>
+
+        <!-- Section for Films -->
+        <section class="mb-5">
+            <h2 class="neon-text">Manage Films</h2>
+            <form id="filmForm" class="mb-3">
+                <input type="hidden" id="filmId">
+                <div class="form-group">
+                    <label for="judul">Film Title:</label>
+                    <input type="text" id="judul" name="judul" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="durasi">Duration (minutes):</label>
+                    <input type="number" id="durasi" name="durasi" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <button type="submit" class="btn btn-neon">Save Film</button>
+            </form>
+            <table id="filmsTable" class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows added dynamically here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section for Cinemas -->
+        <section class="mb-5">
+            <h2 class="neon-text">Manage Cinemas</h2>
+            <form id="cinemaForm" class="mb-3">
+                <input type="hidden" id="cinemaId">
+                <div class="form-group">
+                    <label for="nama">Cinema Name:</label>
+                    <input type="text" id="nama" name="nama" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="lokasi">Location:</label>
+                    <input type="text" id="lokasi" name="lokasi" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <button type="submit" class="btn btn-neon">Save Cinema</button>
+            </form>
+            <table id="cinemasTable" class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows added dynamically here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section for Schedules -->
+        <section class="mb-5">
+            <h2 class="neon-text">Manage Schedules</h2>
+            <form id="scheduleForm" class="mb-3">
+                <input type="hidden" id="scheduleId">
+                <div class="form-group">
+                    <label for="cinemaId">Cinema ID:</label>
+                    <input type="text" id="cinemaId" name="cinemaId" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="filmId">Film ID:</label>
+                    <input type="text" id="filmId" name="filmId" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="startTime">Start Time:</label>
+                    <input type="datetime-local" id="startTime" name="startTime" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <button type="submit" class="btn btn-neon">Save Schedule</button>
+            </form>
+            <table id="schedulesTable" class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cinema ID</th>
+                        <th>Film ID</th>
+                        <th>Start Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows added dynamically here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section for Tickets -->
+        <section>
+            <h2 class="neon-text">Manage Tickets</h2>
+            <form id="ticketForm" class="mb-3">
+                <input type="hidden" id="ticketId">
+                <div class="form-group">
+                    <label for="scheduleId">Schedule ID:</label>
+                    <input type="text" id="scheduleId" name="scheduleId" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="numTickets">Number of Tickets:</label>
+                    <input type="number" id="numTickets" name="numTickets" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="totalPrice">Total Price:</label>
+                    <input type="text" id="totalPrice" name="totalPrice" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <button type="submit" class="btn btn-neon">Save Ticket</button>
+            </form>
+            <table id="ticketsTable" class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Schedule ID</th>
+                        <th>Number of Tickets</th>
+                        <th>Total Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows added dynamically here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/admin-script.js"></script>
+</body>
+</html>

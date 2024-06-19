@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Cinema Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 neon-text">Cinema Booking</h1>
+
+        <!-- Section for Film List -->
+        <section class="mb-5" id="filmListSection">
+            <h2 class="neon-text">Available Films</h2>
+            <div id="filmList" class="row">
+                <!-- Film cards added dynamically here -->
+            </div>
+        </section>
+
+        <!-- Section for Film Details and Schedule -->
+        <section id="filmDetailsSection" class="mb-5 d-none">
+            <h2 class="neon-text">Film Details</h2>
+            <div id="filmDetails" class="mb-3">
+                <!-- Film details added dynamically here -->
+            </div>
+            <h3 class="neon-text">Schedule</h3>
+            <table id="scheduleTable" class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Cinema</th>
+                        <th>Time</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Schedule rows added dynamically here -->
+                </tbody>
+            </table>
+            <button class="btn btn-neon" onclick="goBack()">Back to Films</button>
+        </section>
+
+        <!-- Section for Selecting Seat, Date, and Time -->
+        <section id="bookingSection" class="mb-5 d-none">
+            <h2 class="neon-text">Book Your Seat</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="cinemaSelect">Select Cinema:</label>
+                    <select id="cinemaSelect" class="form-control bg-dark text-light border-neon" required>
+                        <!-- Cinema options added dynamically here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dateSelect">Select Date:</label>
+                    <input type="date" id="dateSelect" class="form-control bg-dark text-light border-neon" required>
+                </div>
+                <div class="form-group">
+                    <label for="timeSelect">Select Time:</label>
+                    <select id="timeSelect" class="form-control bg-dark text-light border-neon" required>
+                        <!-- Time options added dynamically here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="seatSelect">Select Seat:</label>
+                    <div id="seatLayout" class="d-flex flex-wrap justify-content-center">
+                        <!-- Seat layout added dynamically here -->
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-neon">Book Ticket</button>
+            </form>
+            <button class="btn btn-neon mt-3" onclick="goBackToDetails()">Back to Details</button>
+        </section>
+
+        <!-- Section for Confirmation -->
+        <section id="confirmationSection" class="mb-5 d-none">
+            <h2 class="neon-text">Confirmation</h2>
+            <div id="confirmationDetails" class="mb-3">
+                <!-- Confirmation details added dynamically here -->
+            </div>
+            <button class="btn btn-neon" onclick="goBackToBooking()">Back to Booking</button>
+            <button class="btn btn-neon" onclick="confirmBooking()">Confirm Booking</button>
+        </section>
+
+        <!-- Section for Ticket -->
+        <section id="ticketSection" class="mb-5 d-none">
+            <h2 class="neon-text">Your Ticket</h2>
+            <div id="ticket" class="ticket">
+                <!-- Ticket details added dynamically here -->
+            </div>
+            <button class="btn btn-neon" onclick="goBackToFilms()">Back to Films</button>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
